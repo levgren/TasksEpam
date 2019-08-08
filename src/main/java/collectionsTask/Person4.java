@@ -9,7 +9,6 @@ public class Person4 {
     private String address;
     private String phone;
 
-
     public String getPhone() {
         return phone;
     }

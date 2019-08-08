@@ -15,7 +15,6 @@ public class Student4 extends Person4 {
         this.group = group;
     }
 
-
     public int getId() { return id; }
 
     public void setId(int id) { this.id = id; }
@@ -33,7 +32,6 @@ public class Student4 extends Person4 {
     public void setGroup(int group) {
         this.group = group;
     }
-
 
     @Override
     public String toString() {
