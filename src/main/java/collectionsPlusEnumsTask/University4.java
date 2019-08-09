@@ -1,4 +1,4 @@
-package collectionsTask;
+package collectionsPlusEnumsTask;
 import java.util.ArrayList;
 
 public class University4 {
@@ -24,17 +24,17 @@ public class University4 {
                 '}';
     }
 
-    public void checkCollege(String collegeName){
+    public void checkCollege(Colleges collegeName){
         for (Student4 counter : getStudents()){
             if (counter.getCollege().equals(collegeName))
                 System.out.println("Student of " + collegeName + " college is: " + counter.getSurname());
         }
     }
 
-    public void checkCollegeAndCourse(String collegeName, int course){
+    public void checkCollegeAndCourse(Colleges collegeName, Courses course){
         ArrayList<String> temp = new ArrayList<String>();
         for (Student4 counter : getStudents()){
-            if (counter.getCollege().equals(collegeName) && counter.getCourse() == (course))
+            if (counter.getCollege().equals(collegeName) && counter.getCourse().equals (course))
                 temp.add(counter.getSurname() + " " + counter.getName());
         }
         System.out.println("Student of " + collegeName + " college, " + course + " course is: " + temp);
@@ -49,10 +49,10 @@ public class University4 {
         System.out.println("Fucken student(s) " + temp + " was(were) born after " + year + " fucken year");
     }
 
-    public void checkGroup(int group){
+    public void checkGroup(Groups group){
         ArrayList<String> temp = new ArrayList<String>();
         for (Student4 counter : getStudents()){
-            if (counter.getGroup() == group)
+            if (counter.getGroup().equals(group))
                 temp.add(counter.getSurname() + " " + counter.getName());
         }
         System.out.println("In " + group + " group is(are) studying such fucking buster(s): " + temp);

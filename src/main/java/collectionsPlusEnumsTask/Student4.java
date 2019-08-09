@@ -1,13 +1,14 @@
-package collectionsTask;
+package collectionsPlusEnumsTask;
+
 public class Student4 extends Person4 {
 
     private int id;
-    private String college;
-    private int course;
-    private int group;
+    private Colleges college;
+    private Courses course;
+    private Groups group;
 
     public Student4(String name, String surname, String fathername, int yearOfBirth, String address, String phone,
-                    int id, String college, int course, int group) {
+                    int id, Colleges college, Courses course, Groups group) {
         super(name, surname, fathername, yearOfBirth, address, phone);
         this.id = id;
         this.college = college;
@@ -19,17 +20,17 @@ public class Student4 extends Person4 {
 
     public void setId(int id) { this.id = id; }
 
-    public String getCollege() { return college; }
+    public Colleges getCollege() { return college; }
 
-    public void setCollege(String college) { this.college = college; }
+    public void setCollege(Colleges college) { this.college = college; }
 
-    public int getCourse() { return course; }
+    public Courses getCourse() { return course; }
 
-    public void setCourse(int course) { this.course = course; }
+    public void setCourse(Courses course) { this.course = course; }
 
-    public int getGroup() { return group; }
+    public Groups getGroup() { return group; }
 
-    public void setGroup(int group) {
+    public void setGroup(Groups group) {
         this.group = group;
     }
 

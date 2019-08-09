@@ -1,4 +1,4 @@
-package collectionsTask;
+package collectionsPlusEnumsTask;
 
 public class Person4 {
 
