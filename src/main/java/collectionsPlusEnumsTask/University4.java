@@ -41,7 +41,7 @@ public class University4 {
     }
 
     public void chekYearOfBirth(int year){
-        ArrayList<String> temp = new ArrayList<String>();
+        ArrayList<String> temp = new ArrayList<>();
         for (Student4 counter : getStudents()){
             if (counter.getDateOfBirth() > year)
                 temp.add(counter.getSurname() + " " + counter.getName());
@@ -50,7 +50,7 @@ public class University4 {
     }
 
     public void checkGroup(Groups group){
-        ArrayList<String> temp = new ArrayList<String>();
+        ArrayList<String> temp = new ArrayList<>();
         for (Student4 counter : getStudents()){
             if (counter.getGroup().equals(group))
                 temp.add(counter.getSurname() + " " + counter.getName());
