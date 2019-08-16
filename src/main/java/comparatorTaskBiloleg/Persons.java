@@ -1,17 +1,13 @@
 package comparatorTaskBiloleg;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
-@ToString
+@ToString @Getter @AllArgsConstructor
 public class Persons {
 
-    @Getter @Setter private String name;
-    @Getter private int age;
+    private String name;
+    private int age;
 
-    Persons(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
 }
