@@ -1,21 +1,15 @@
 package comparatorTaskBiloleg;
 
+import lombok.Getter;
+
 public class Persons {
 
-    private String name;
-    private int age;
+    @Getter private String name;
+    @Getter private int age;
 
     Persons(String name, int age) {
         this.name = name;
         this.age = age;
-    }
-
-    String getName() {
-        return name;
-    }
-
-    int getAge() {
-        return age;
     }
 
     @Override
