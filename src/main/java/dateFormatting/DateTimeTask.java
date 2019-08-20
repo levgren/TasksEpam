@@ -19,6 +19,7 @@ public class DateTimeTask {
         formattingOfDate();
         formattingOfDateStart();
         formattingOfDateEnd();
+        convertDateToString();
     }
 
     private static void formattingOfDate() throws ParseException {
@@ -62,11 +63,12 @@ public class DateTimeTask {
 //    }
 
 
-
-    //        long timestamp = System.currentTimeMillis();
-//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-//        Date date1 = new Date(timestamp);
-//        System.out.println(dateFormat.format(date1));
+    private static void convertDateToString() {
+        long timestamp = System.currentTimeMillis();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        Date date1 = new Date(timestamp);
+        System.out.println(dateFormat.format(date1));
+    }
 }
 
 
