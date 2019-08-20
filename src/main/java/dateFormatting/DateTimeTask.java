@@ -10,8 +10,10 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
+
+import static java.util.Locale.ENGLISH;
 
 public class DateTimeTask {
 
@@ -24,6 +26,7 @@ public class DateTimeTask {
         formattingOfDateEnd();
         convertDateToString();
         compareTwoDates();
+        getDayOfWeak();
     }
 
     private static void formattingOfDate() throws ParseException {
@@ -35,6 +38,7 @@ public class DateTimeTask {
 
 
         LocalDateTime now = LocalDateTime.now();
+
         System.out.println(now.with(LocalTime.MIN));
         System.out.println(now.with(LocalTime.MAX));
 
@@ -48,23 +52,17 @@ public class DateTimeTask {
     }
 
     private static void formattingOfDateStart() {
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy", Locale.ENGLISH);
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy", ENGLISH);
         long milliseconds = LocalDate.parse(stringDate, dateFormatter).atStartOfDay(ZoneOffset.UTC).toInstant().toEpochMilli();
         System.out.println(milliseconds);
     }
 
     private static void formattingOfDateEnd() {
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy", Locale.ENGLISH);
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy", ENGLISH);
         long milliseconds = LocalDate.parse(stringDate, dateFormatter).atStartOfDay(ZoneOffset.UTC).plusDays(1).minusNanos(1).toInstant().toEpochMilli();
         System.out.println(milliseconds);
     }
 
-//    private static void dateSex(){
-//    Date date = new Date();
-//    long milliSeconds = date.getTime();
-//    String strLong = Long.toString(milliSeconds);
-//    System.out.println(milliSeconds);
-//    }
 
     private static void convertDateToString() {
         long timestamp = System.currentTimeMillis();
@@ -74,17 +72,24 @@ public class DateTimeTask {
     }
 
     private static void compareTwoDates() {
-
         LocalDate date = LocalDate.of(2019, 7, 19);
         LocalDate today = LocalDate.now();
         Boolean isToday = date.isEqual(today);
         System.out.println(isToday);
 
-        //between the given date and today
+        //num of days between the given date and today
         DateTime startDate = new DateTime(givenDate);
         DateTime endDate = new DateTime();
         Days diff = Days.daysBetween(startDate, endDate);
         System.out.println(diff.getDays());
+    }
+
+
+    private static void getDayOfWeak() {
+        Calendar cal = Calendar.getInstance();
+        cal.set(1086, 7, 19);
+        int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
+        System.out.println(dayOfWeek);
     }
 }
 
