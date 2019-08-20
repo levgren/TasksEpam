@@ -1,5 +1,8 @@
 package dateFormatting;
 
+import org.joda.time.DateTime;
+import org.joda.time.Days;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -20,6 +23,7 @@ public class DateTimeTask {
         formattingOfDateStart();
         formattingOfDateEnd();
         convertDateToString();
+        compareTwoDates();
     }
 
     private static void formattingOfDate() throws ParseException {
@@ -28,6 +32,7 @@ public class DateTimeTask {
         SimpleDateFormat dtf1 = new SimpleDateFormat("dd-mm-yyyy");
         String newDate = dtf1.format(date);
         System.out.println(newDate);
+
 
         LocalDateTime now = LocalDateTime.now();
         System.out.println(now.with(LocalTime.MIN));
@@ -40,7 +45,6 @@ public class DateTimeTask {
         System.out.println(mills);
 
         System.out.println();
-
     }
 
     private static void formattingOfDateStart() {
@@ -62,12 +66,25 @@ public class DateTimeTask {
 //    System.out.println(milliSeconds);
 //    }
 
-
     private static void convertDateToString() {
         long timestamp = System.currentTimeMillis();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         Date date1 = new Date(timestamp);
         System.out.println(dateFormat.format(date1));
+    }
+
+    private static void compareTwoDates() {
+
+        LocalDate date = LocalDate.of(2019, 7, 19);
+        LocalDate today = LocalDate.now();
+        Boolean isToday = date.isEqual(today);
+        System.out.println(isToday);
+
+        //between the given date and today
+        DateTime startDate = new DateTime(givenDate);
+        DateTime endDate = new DateTime();
+        Days diff = Days.daysBetween(startDate, endDate);
+        System.out.println(diff.getDays());
     }
 }
 
