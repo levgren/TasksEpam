@@ -2,10 +2,9 @@ package comparatorTaskBiloleg;
 
 public class Main {
 
-    private static SetOfPeople setOfPeople = new SetOfPeople();
+    private static SetOperations setOfPeople = new SetOperations();
 
     public static void main(String[] args) {
-
         setOfPeople.setComparator();
     }
 }
