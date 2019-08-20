@@ -44,21 +44,23 @@ public class DateTimeTask {
 
     private static void formattingOfDateStart() {
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy", Locale.ENGLISH);
-        long milliseconds = LocalDate.parse(stringDate, dateFormatter)
-                .atStartOfDay(ZoneOffset.UTC)
-                .toInstant()
-                .toEpochMilli();
+        long milliseconds = LocalDate.parse(stringDate, dateFormatter).atStartOfDay(ZoneOffset.UTC).toInstant().toEpochMilli();
         System.out.println(milliseconds);
     }
 
     private static void formattingOfDateEnd() {
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy", Locale.ENGLISH);
-        long milliseconds = LocalDate.parse(stringDate, dateFormatter)
-                .atStartOfDay(ZoneOffset.UTC).plusDays(1).minusNanos(1)
-                .toInstant()
-                .toEpochMilli();
+        long milliseconds = LocalDate.parse(stringDate, dateFormatter).atStartOfDay(ZoneOffset.UTC).plusDays(1).minusNanos(1).toInstant().toEpochMilli();
         System.out.println(milliseconds);
     }
+
+//    private static void dateSex(){
+//    Date date = new Date();
+//    long milliSeconds = date.getTime();
+//    String strLong = Long.toString(milliSeconds);
+//    System.out.println(milliSeconds);
+//    }
+
 
 
     //        long timestamp = System.currentTimeMillis();
