@@ -12,6 +12,7 @@ import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 import static java.util.Locale.ENGLISH;
 
@@ -63,7 +64,6 @@ public class DateTimeTask {
         System.out.println(milliseconds);
     }
 
-
     private static void convertDateToString() {
         long timestamp = System.currentTimeMillis();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
@@ -84,12 +84,15 @@ public class DateTimeTask {
         System.out.println(diff.getDays());
     }
 
-
     private static void getDayOfWeak() {
         Calendar cal = Calendar.getInstance();
         cal.set(1086, 7, 19);
         int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
         System.out.println(dayOfWeek);
+
+        Calendar sCalendar = Calendar.getInstance();
+        String dayLongName = sCalendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.getDefault());
+        System.out.println(dayLongName);
     }
 }
 
